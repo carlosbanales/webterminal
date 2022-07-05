@@ -34,7 +34,12 @@ function savePrevCommand() {
 
 function insertPrevCommand() {
 	const newDiv = document.createElement("div");
-	const node = document.createTextNode(prevCmdWithPrompt);
+	const node = document.createTextNode(prevCmd);
+	const newSpan = document.createElement("span");
+	const node2 = document.createTextNode(guestPrompt)
+	newSpan.appendChild(node2);
+	newSpan.setAttribute("id","user");
+	newDiv.appendChild(newSpan);
 	newDiv.appendChild(node);
 	const element = container;
 	const child = prompt;
