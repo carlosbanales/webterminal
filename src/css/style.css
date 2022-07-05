@@ -12,7 +12,7 @@ div {
 	margin-top: 4px;
 	margin-bottom: 4px;
 	/* this stops line w/prevCmd from breaking and stacking on a \n */
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 
 #container {
@@ -27,7 +27,6 @@ div {
 	float: left;
 	display: flex;
 	flex-direction: row;
-	position: absolute;
 	top: 0;
 
 }
