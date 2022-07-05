@@ -1,8 +1,11 @@
 let prompt = document.getElementById('prompt');
 let conatainer = document.getElementById('container');
 let down = 0;
+let prevCmdWithPrompt;
 let prevCmd;
 let prevCmdList = [];
+const guest = "guest@carlosbananas.com:~$ "
+const root = "root@carlosbananas.com"
 
 // Checklist
 // - save input data to variable
@@ -16,12 +19,13 @@ let prevCmdList = [];
 function savePrevCommand() {
 	const input = document.getElementById("command").value;
 	prevCmd = input;
-	prevCmdList = input;
+	prevCmdList.push(input);
+	prevCmdWithPrompt = guest.concat(prevCmd); 
 }
 
 function insertPrevCommand() {
 	const createDiv = document.createElement("div");
-	const node = document.createTextNode("guest@carlosbananas.com:~$ "+prevCmd);
+	const node = document.createTextNode(prevCmdWithPrompt);
 	createDiv.appendChild(node);
 	const element = document.getElementById("container");
 	const child = document.getElementById("prompt");
@@ -38,5 +42,6 @@ window.addEventListener('keypress', (e) => {
 		savePrevCommand();
 		movePromptDown();
 		insertPrevCommand();
+		console.log(prevCmdList);
 	}
 });
