@@ -1,5 +1,5 @@
 let prompt = document.getElementById('prompt');
-let conatainer = document.getElementById('container');
+let container = document.getElementById('container');
 let down = 0;
 let prevCmdWithPrompt;
 let prevCmd;
@@ -14,8 +14,6 @@ const root = "root@carlosbananas.com"
 // - create commands
 // - add a header and a set of instructions
 
-
-
 function savePrevCommand() {
 	const input = document.getElementById("command").value;
 	prevCmd = input;
@@ -27,8 +25,8 @@ function insertPrevCommand() {
 	const createDiv = document.createElement("div");
 	const node = document.createTextNode(prevCmdWithPrompt);
 	createDiv.appendChild(node);
-	const element = document.getElementById("container");
-	const child = document.getElementById("prompt");
+	const element = container;
+	const child = prompt;
 	element.insertBefore(createDiv, child);
 }
 
@@ -42,6 +40,7 @@ window.addEventListener('keypress', (e) => {
 		savePrevCommand();
 		movePromptDown();
 		insertPrevCommand();
+		document.getElementById('command').value = "";
 		console.log(prevCmdList);
 	}
 });

@@ -8,7 +8,7 @@ html, body {
 }
 
 div {
-	background: green;
+	background: transparent;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	/* this stops line w/prevCmd from breaking and stacking on a \n */
