@@ -1,0 +1,36 @@
+html, body {
+  background-color: black;
+  font-family: monospace;
+  font-size: 14pt;
+  color: white;
+  margin: 5px;
+	min-width: 600px;
+}
+
+#container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+#prompt {
+	background: green;
+	width: 100%;
+	float: left;
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	top: 0;
+
+}
+
+.cmdline {
+  background-color: transparent;
+  margin-left: 5px;
+	outline: none;
+  border: none;
+	width: 100%;
+  font: inherit;
+  color: inherit;
+	overflow: visible;
+}
