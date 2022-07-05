@@ -38,4 +38,6 @@ div {
   font: inherit;
   color: inherit;
 	overflow: visible;
+	word-wrap: normal;
+
 }

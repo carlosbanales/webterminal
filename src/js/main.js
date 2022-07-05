@@ -11,6 +11,8 @@ let prevCmdList = [];
 // - create commands
 // - add a header and a set of instructions
 
+
+
 function savePrevCommand() {
 	const input = document.getElementById("command").value;
 	prevCmd = input;
