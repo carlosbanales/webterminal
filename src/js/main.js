@@ -9,13 +9,23 @@ let down = 0;
 // - create commands
 // - add a header and a set of instructions
 
+function createDiv() {
+	const prevCommand = document.createElement("div");
+	const node = document.createTextNode("guest@carlosbananas.com:~$ ");
+	prevCommand.appendChild(node);
+	const element = document.getElementById("container");
+	const child = document.getElementById("prompt");
+	element.insertBefore(prevCommand, child);
+}
+
 function moveDown() {
-	down+=40;
+	down+=30;
 	prompt.style.top = down + 'px';
 }
 
 window.addEventListener('keypress', (e) => {
 	if (e.key === 'Enter') {
-		moveDown();	
+		moveDown();
+		createDiv();
 	}
 });

@@ -7,6 +7,11 @@ html, body {
 	min-width: 600px;
 }
 
+div {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
 #container {
 	height: 100%;
 	width: 100%;
@@ -14,7 +19,7 @@ html, body {
 }
 
 #prompt {
-	background: green;
+	background: transparent;
 	width: 100%;
 	float: left;
 	display: flex;
