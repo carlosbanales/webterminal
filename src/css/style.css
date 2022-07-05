@@ -11,8 +11,10 @@ div {
 	background: transparent;
 	margin-top: 4px;
 	margin-bottom: 4px;
-	/* this stops line w/prevCmd from breaking and stacking on a \n */
-	/*white-space: nowrap;*/
+}
+
+#user {
+	color: green;
 }
 
 #container {
@@ -27,8 +29,6 @@ div {
 	float: left;
 	display: flex;
 	flex-direction: row;
-	top: 0;
-
 }
 
 .cmdline {
@@ -40,6 +40,6 @@ div {
   font: inherit;
   color: inherit;
 	overflow: visible;
-	word-wrap: normal;
+	word-wrap: nowrap;
 
 }

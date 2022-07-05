@@ -4,41 +4,48 @@ let down = 0;
 let prevCmdWithPrompt;
 let prevCmd;
 let prevCmdList = [];
-const guest = "guest@carlosbananas.com:~$ "
-const root = "root@carlosbananas.com"
+const guestPrompt = "guest@carlosbananas.com:~$ "
+const rootPrompt = "root@carlosbananas.com:~$ "
 
 // Checklist
+// - create config file to load on pageload
 // - save input data to variable
 // - display saved data on previous line when the enter key is pressed
 // - allow up and down key to step though saved inputs
 // - create commands
 // - add a header and a set of instructions
 
+function onPageLoad() {
+	const newDiv = document.createElement("div");
+	newDiv.setAttribute('id', 'user');
+	const node = document.createTextNode(guestPrompt);
+	newDiv.appendChild(node);
+	const element = prompt;
+	const child = document.getElementById("command");
+	element.insertBefore(newDiv, child);
+}
+
 function savePrevCommand() {
 	const input = document.getElementById("command").value;
 	prevCmd = input;
 	prevCmdList.push(input);
-	prevCmdWithPrompt = guest.concat(prevCmd); 
+	prevCmdWithPrompt = guestPrompt.concat(prevCmd); 
 }
 
 function insertPrevCommand() {
-	const createDiv = document.createElement("div");
+	const newDiv = document.createElement("div");
 	const node = document.createTextNode(prevCmdWithPrompt);
-	createDiv.appendChild(node);
+	newDiv.appendChild(node);
 	const element = container;
 	const child = prompt;
-	element.insertBefore(createDiv, child);
+	element.insertBefore(newDiv, child);
 }
 
-function movePromptDown() {
-	down+=30;
-	prompt.style.top = down + 'px';
-}
+onPageLoad();
 
 window.addEventListener('keypress', (e) => {
 	if (e.key === 'Enter') {
 		savePrevCommand();
-		movePromptDown();
 		insertPrevCommand();
 		document.getElementById('command').value = "";
 		console.log(prevCmdList);
